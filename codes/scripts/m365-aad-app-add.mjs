@@ -17,8 +17,16 @@ async function createAADApp(appName, apiPermissions, exposeAPIURL) {
     }
     return createdApp;
 }
-const appName = 'Teams App Camp App June3-V1';
-const apiPermissions = 'https://graph.microsoft.com/User.Read';
-const exposeAPIURL = '8b16-106-51-160-179.ngrok-free.app';
 
-const appCreated = await createAADApp(appName, apiPermissions,exposeAPIURL);
+// For Production
+// const appName = 'Teams App Camp App June3-V1';
+//For Development
+const appName = 'Teams App Camp App June3-V1-DEV';
+const apiPermissions = 'https://graph.microsoft.com/User.Read';
+
+// //For Development
+const exposeAPIURL = 'b172-106-51-160-179.ngrok-free.app';
+// //For Production
+// const exposeAPIURL = 'teams-appcamp-june3.azurewebsites.net';
+
+const appCreated = await createAADApp(appName, apiPermissions, exposeAPIURL);

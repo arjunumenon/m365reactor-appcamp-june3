@@ -22,8 +22,8 @@ fs.readFile('manifest/manifest.template.json', 'utf-8', (err, data) => {
         zip.addLocalFile(`manifest/northwind32.png`);
         zip.addLocalFile(`manifest/northwind192.png`);
 
-        zip.writeZip(`manifest/northwind.zip`);
-        console.log(`Created app package manifest/northwind.zip`);
+        zip.writeZip(`manifest/teams-appcamp.zip`);
+        console.log(`Created app package manifest/teams-appcamp.zip`);
     });
 });
 

@@ -2,6 +2,9 @@
 import { getEmployee } from '../modules/northwindDataService.js';
 import 'https://alcdn.msauth.net/browser/2.21.0/js/msal-browser.min.js';
 import { env } from '/modules/env.js';
+import { ensureTeamsSdkInitialized, inTeams } from '/modules/teamsHelpers.js';
+import 'https://res.cdn.office.net/teams-js/2.0.0/js/MicrosoftTeams.min.js';
+
 
 // interface IIdentityClient {
 //     async getLoggedinEmployeeId(): number;
@@ -73,33 +76,39 @@ export function getAccessToken() {
 }
 
 async function getAccessToken2() {
-    // If we were waiting for a redirect with an auth code, handle it here
-    await msalClient.handleRedirectPromise();
 
-    try {
-        await msalClient.ssoSilent(msalRequest);
-    } catch (error) {
-        await msalClient.loginRedirect(msalRequest);
-    }
-
-    const accounts = msalClient.getAllAccounts();
-    if (accounts.length === 1) {
-        msalRequest.account = accounts[0];
+    if (await inTeams()) {
+        await ensureTeamsSdkInitialized();
+        return await microsoftTeams.authentication.getAuthToken();
     } else {
-        throw ("Error: Too many or no accounts logged in");
-    }
+        // If we were waiting for a redirect with an auth code, handle it here
+        await msalClient.handleRedirectPromise();
 
-    let accessToken;
-    try {
-        const tokenResponse = await msalClient.acquireTokenSilent(msalRequest);
-        accessToken = tokenResponse.accessToken;
-        return accessToken;
-    } catch (error) {
-        if (error instanceof msal.InteractionRequiredAuthError) {
-            console.warn("Silent token acquisition failed; acquiring token using redirect");
-            msalClient.acquireTokenRedirect(msalRequest);
+        try {
+            await msalClient.ssoSilent(msalRequest);
+        } catch (error) {
+            await msalClient.loginRedirect(msalRequest);
+        }
+
+        const accounts = msalClient.getAllAccounts();
+        if (accounts.length === 1) {
+            msalRequest.account = accounts[0];
         } else {
-            throw (error.message);
+            throw ("Error: Too many or no accounts logged in");
+        }
+
+        let accessToken;
+        try {
+            const tokenResponse = await msalClient.acquireTokenSilent(msalRequest);
+            accessToken = tokenResponse.accessToken;
+            return accessToken;
+        } catch (error) {
+            if (error instanceof msal.InteractionRequiredAuthError) {
+                console.warn("Silent token acquisition failed; acquiring token using redirect");
+                msalClient.acquireTokenRedirect(msalRequest);
+            } else {
+                throw (error.message);
+            }
         }
     }
 }
@@ -116,8 +125,10 @@ export async function getLoggedInEmployee() {
 export async function logoff() {
     getLoggedInEmployeeIdPromise = null;
     getAccessTokenPromise = null;
-    
-    msalClient.logoutRedirect(msalRequest);
+
+    if (!(await inTeams())) {
+        msalClient.logoutRedirect(msalRequest);
+    }
 }
 
 // Headers for use in Fetch (HTTP) requests when calling anonymous web services

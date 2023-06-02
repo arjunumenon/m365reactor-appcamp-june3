@@ -6,9 +6,9 @@
   "packageName": "io.github.officedev.teamsappcamp1.northwind",
   "developer": {
     "name": "Northwind Traders",
-    "websiteUrl": "https://teams-appcamp-june3.azurewebsites.net//",
-    "privacyUrl": "https://teams-appcamp-june3.azurewebsites.net//privacy.html",
-    "termsOfUseUrl": "https://teams-appcamp-june3.azurewebsites.net//termsofuse.html"
+    "websiteUrl": "https://7ed8-106-51-160-179.ngrok-free.app/",
+    "privacyUrl": "https://7ed8-106-51-160-179.ngrok-free.app/privacy.html",
+    "termsOfUseUrl": "https://7ed8-106-51-160-179.ngrok-free.app/termsofuse.html"
   },
   "icons": {
       "color": "northwind192.png",
@@ -27,8 +27,8 @@
     {
       "entityId": "Orders",
       "name": "My Orders",
-      "contentUrl": "https://teams-appcamp-june3.azurewebsites.net//pages/myOrders.html",
-      "websiteUrl": "https://teams-appcamp-june3.azurewebsites.net//pages/myOrders.html",
+      "contentUrl": "https://7ed8-106-51-160-179.ngrok-free.app/pages/myOrders.html",
+      "websiteUrl": "https://7ed8-106-51-160-179.ngrok-free.app/pages/myOrders.html",
       "scopes": [
         "personal"
       ]
@@ -36,8 +36,8 @@
     {
       "entityId": "Products",
       "name": "Products",
-      "contentUrl": "https://teams-appcamp-june3.azurewebsites.net//pages/categories.html",
-      "websiteUrl": "https://teams-appcamp-june3.azurewebsites.net//pages/categories.html",
+      "contentUrl": "https://7ed8-106-51-160-179.ngrok-free.app/pages/categories.html",
+      "websiteUrl": "https://7ed8-106-51-160-179.ngrok-free.app/pages/categories.html",
       "scopes": [
         "personal"
       ]
@@ -49,10 +49,10 @@
       "messageTeamMembers"
   ],
   "validDomains": [
-      "teams-appcamp-june3.azurewebsites.net/"
+      "7ed8-106-51-160-179.ngrok-free.app"
   ],
   "webApplicationInfo": {
-      "id": "78d9a887-c065-47b5-8816-183dc3eb0c0e",
-      "resource": "api://teams-appcamp-june3.azurewebsites.net//78d9a887-c065-47b5-8816-183dc3eb0c0e"
+      "id": "ed333d37-0ebf-481b-b7fe-d62fdf0bdd8e",
+      "resource": "api://7ed8-106-51-160-179.ngrok-free.app/ed333d37-0ebf-481b-b7fe-d62fdf0bdd8e"
   }
 }
