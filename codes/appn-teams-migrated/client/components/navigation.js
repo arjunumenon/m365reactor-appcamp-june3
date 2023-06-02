@@ -1,4 +1,4 @@
-import { inTeams } from '../modules/teams.js'
+import { inTeams } from '../modules/teamsHelpers.js'
 
 const topNavLinks = [
     { "text": "Home", "url": "/index.html" },
