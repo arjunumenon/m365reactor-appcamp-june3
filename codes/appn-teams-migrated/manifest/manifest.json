@@ -1,0 +1,58 @@
+{
+  "$schema": "https://developer.microsoft.com/en-us/json-schemas/teams/v1.12/MicrosoftTeams.schema.json",
+  "manifestVersion": "1.12",
+  "version": "0.0.1",
+  "id": "b326634c-74d2-4087-9b16-1935ef1b6d3c",
+  "packageName": "io.github.officedev.teamsappcamp1.northwind",
+  "developer": {
+    "name": "Northwind Traders",
+    "websiteUrl": "https://teams-appcamp-june3.azurewebsites.net//",
+    "privacyUrl": "https://teams-appcamp-june3.azurewebsites.net//privacy.html",
+    "termsOfUseUrl": "https://teams-appcamp-june3.azurewebsites.net//termsofuse.html"
+  },
+  "icons": {
+      "color": "northwind192.png",
+      "outline": "northwind32.png"
+  },
+  "name": {
+    "short": "Teams App Camp",
+    "full": "Teams App Camp Order System"
+  },
+  "description": {
+    "short": "Sample enterprise app using the Northwind Traders sample database",
+    "full": "Simple app to demonstrate porting a SaaS app to Microsoft Teams"
+  },
+  "accentColor": "#FFFFFF",
+  "staticTabs": [
+    {
+      "entityId": "Orders",
+      "name": "My Orders",
+      "contentUrl": "https://teams-appcamp-june3.azurewebsites.net//pages/myOrders.html",
+      "websiteUrl": "https://teams-appcamp-june3.azurewebsites.net//pages/myOrders.html",
+      "scopes": [
+        "personal"
+      ]
+    },
+    {
+      "entityId": "Products",
+      "name": "Products",
+      "contentUrl": "https://teams-appcamp-june3.azurewebsites.net//pages/categories.html",
+      "websiteUrl": "https://teams-appcamp-june3.azurewebsites.net//pages/categories.html",
+      "scopes": [
+        "personal"
+      ]
+    }
+  ],
+  "showLoadingIndicator": false,
+  "permissions": [
+      "identity",
+      "messageTeamMembers"
+  ],
+  "validDomains": [
+      "teams-appcamp-june3.azurewebsites.net/"
+  ],
+  "webApplicationInfo": {
+      "id": "78d9a887-c065-47b5-8816-183dc3eb0c0e",
+      "resource": "api://teams-appcamp-june3.azurewebsites.net//78d9a887-c065-47b5-8816-183dc3eb0c0e"
+  }
+}
