@@ -2,6 +2,7 @@ import {
     getLoggedInEmployee,
     logoff
 } from './identityClient.js';
+import { inTeams } from '../modules/teamsHelpers.js';
 
 class northwindUserPanel extends HTMLElement {
 
@@ -15,8 +16,8 @@ class northwindUserPanel extends HTMLElement {
             logoff();
 
         } else {
-
-            this.innerHTML = `<div class="userPanel">
+            if (!(await inTeams())){
+                this.innerHTML = `<div class="userPanel">
                 <img src="data:image/bmp;base64,${employee.photo}"></img>
                 <p>${employee.displayName}</p>
                 <p>${employee.jobTitle}</p>
@@ -25,10 +26,11 @@ class northwindUserPanel extends HTMLElement {
             </div>
             `;
 
-            const logoutButton = document.getElementById('logout');
-            logoutButton.addEventListener('click', async ev => {
-                logoff();
-            });
+                const logoutButton = document.getElementById('logout');
+                logoutButton.addEventListener('click', async ev => {
+                    logoff();
+                });
+            }
         }
     }
 }
