@@ -19,3 +19,20 @@ export async function inTeams() {
         return false;
     }
 }
+
+function setTheme(theme) {
+    const el = document.documentElement;
+    el.setAttribute('data-theme', theme);
+}
+
+// Inline code to set theme on any page using teamsHelpers
+(async () => {
+    await ensureTeamsSdkInitialized();
+    const context = await microsoftTeams.app.getContext();
+    setTheme(context.app.theme);
+
+    // When the theme changes, update the CSS again
+    microsoftTeams.registerOnThemeChangeHandler((theme) => {
+        setTheme(theme);
+    });    
+})();
