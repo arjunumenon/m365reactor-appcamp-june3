@@ -17,15 +17,8 @@ async function createAADApp(appName, apiPermissions, exposeAPIURL) {
     }
     return createdApp;
 }
-const appName = 'Teams App Camp App Registration-V1';
+const appName = 'Teams App Camp App June3-V1';
 const apiPermissions = 'https://graph.microsoft.com/User.Read';
-const exposeAPIURL = '2845-52-172-145-182.ngrok-free.app';
+const exposeAPIURL = '8b16-106-51-160-179.ngrok-free.app';
 
 const appCreated = await createAADApp(appName, apiPermissions,exposeAPIURL);
-console.log(appCreated);
-if (appCreated === null) {
-    console.error(`   ${chalk.red(`Failed to create the App with Name ${appName}`)}`);
-}
-else {
-    console.log(`Created Azure AD app ${appCreated.appName} with id ${appCreated.appId}`);
-}

@@ -7,6 +7,7 @@ This has the script folder for creating the Azure AD Application and Service Pri
 The following are the prerequisites for running the script:
 
 - [Google ZX](https://github.com/google/zx)
+- [CLI for Microsoft 365](https://pnp.github.io/cli-microsoft365/)
 
 ## How to run the script
 
