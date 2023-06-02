@@ -19,8 +19,8 @@
         "full": "full name for TeamsAppCamp-SupplierSearch"
     },
     "description": {
-        "short": "Messaging Extension used to search Suppliers and their products",
-        "full": "Messaging Extension used to search Suppliers and their products"
+        "short": "Teams App Camp - Messaging Extension used to search Suppliers and their products",
+        "full": "Teams App Camp Demo - Messaging Extension used to search Suppliers and their products"
     },
     "accentColor": "#FFFFFF",
     "bots": [],
@@ -34,14 +34,14 @@
                         "compose",
                         "commandBox"
                     ],
-                    "description": "Test command to run query",
-                    "title": "Search",
+                    "description": "Find a supplier",
+                    "title": "Supplier Search",
                     "type": "query",
                     "parameters": [
                         {
                             "name": "searchQuery",
-                            "title": "Search Query",
-                            "description": "Your search query",
+                            "title": "Supplier Search",
+                            "description": "Look up a Supplier",
                             "inputType": "text"
                         }
                     ]
