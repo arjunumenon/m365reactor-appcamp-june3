@@ -2,13 +2,13 @@
   "$schema": "https://developer.microsoft.com/en-us/json-schemas/teams/v1.12/MicrosoftTeams.schema.json",
   "manifestVersion": "1.12",
   "version": "0.0.1",
-  "id": "b326634c-74d2-4087-9b16-1935ef1b6d3c",
+  "id": "<TEAMS_APP_ID>",
   "packageName": "io.github.officedev.teamsappcamp1.northwind",
   "developer": {
     "name": "Northwind Traders",
-    "websiteUrl": "https://26a9-167-220-238-238.ngrok-free.app/",
-    "privacyUrl": "https://26a9-167-220-238-238.ngrok-free.app/privacy.html",
-    "termsOfUseUrl": "https://26a9-167-220-238-238.ngrok-free.app/termsofuse.html"
+    "websiteUrl": "https://<HOST_NAME>/",
+    "privacyUrl": "https://<HOST_NAME>/privacy.html",
+    "termsOfUseUrl": "https://<HOST_NAME>/termsofuse.html"
   },
   "icons": {
       "color": "northwind192.png",
@@ -27,8 +27,8 @@
     {
       "entityId": "Orders",
       "name": "My Orders",
-      "contentUrl": "https://26a9-167-220-238-238.ngrok-free.app/pages/myOrders.html",
-      "websiteUrl": "https://26a9-167-220-238-238.ngrok-free.app/pages/myOrders.html",
+      "contentUrl": "https://<HOST_NAME>/pages/myOrders.html",
+      "websiteUrl": "https://<HOST_NAME>/pages/myOrders.html",
       "scopes": [
         "personal"
       ]
@@ -36,8 +36,8 @@
     {
       "entityId": "Products",
       "name": "Products",
-      "contentUrl": "https://26a9-167-220-238-238.ngrok-free.app/pages/categories.html",
-      "websiteUrl": "https://26a9-167-220-238-238.ngrok-free.app/pages/categories.html",
+      "contentUrl": "https://<HOST_NAME>/pages/categories.html",
+      "websiteUrl": "https://<HOST_NAME>/pages/categories.html",
       "scopes": [
         "personal"
       ]
@@ -49,10 +49,10 @@
       "messageTeamMembers"
   ],
   "validDomains": [
-      "26a9-167-220-238-238.ngrok-free.app"
+      "<HOST_NAME>"
   ],
   "webApplicationInfo": {
-      "id": "ed333d37-0ebf-481b-b7fe-d62fdf0bdd8e",
-      "resource": "api://26a9-167-220-238-238.ngrok-free.app/ed333d37-0ebf-481b-b7fe-d62fdf0bdd8e"
+      "id": "<CLIENT_ID>",
+      "resource": "api://<HOST_NAME>/<CLIENT_ID>"
   }
 }
